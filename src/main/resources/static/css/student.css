@@ -1,0 +1,156 @@
+     * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+     }
+
+     body {
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         background-color: #f8f9fa;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         margin: 0;
+     }
+
+     .header {
+         width: 100%;
+         max-width: 400px;
+         background-color: #1d7824;
+         color: #fff;
+         padding: 15px;
+         text-align: center;
+         font-size: 20px;
+         font-weight: 600;
+         border-radius: 12px 12px 0 0;
+         position: relative;
+     }
+
+     .header .buttons {
+         position: absolute;
+         top: 15px;
+         right: 15px;
+         display: flex;
+         gap: 10px;
+     }
+
+     .header .buttons a {
+         color: #fff;
+         text-decoration: none;
+         font-size: 16px;
+     }
+
+     .container {
+         width: 100%;
+         max-width: 400px;
+         background-color: #fff;
+         border-radius: 12px;
+         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+         overflow: hidden;
+     }
+
+     .tabs {
+         display: flex;
+         justify-content: space-around;
+         border-bottom: 1px solid #ddd;
+         background-color: #f0f0f0;
+     }
+
+     .tab {
+         flex: 1;
+         padding: 15px;
+         text-align: center;
+         cursor: pointer;
+         background-color: #f0f0f0;
+         border: none;
+         font-size: 16px;
+         transition: background-color 0.3s ease;
+     }
+
+     .tab.active {
+         background-color: #fff;
+         border-bottom: 2px solid #1d7824;
+         font-weight: 600;
+     }
+
+     .tab-content {
+         display: none;
+         padding: 20px;
+     }
+
+     .tab-content.active {
+         display: block;
+     }
+
+     .workout {
+         margin-bottom: 20px;
+         padding: 15px;
+         border: 1px solid #ddd;
+         border-radius: 8px;
+         background-color: #f9f9f9;
+     }
+
+     .workout button {
+         background-color: #1d7824;
+         color: #fff;
+         padding: 10px 15px;
+         border: none;
+         border-radius: 8px;
+         cursor: pointer;
+         font-size: 16px;
+         transition: background-color 0.3s ease;
+     }
+
+     .workout button:hover {
+         background-color: #1d7824;
+     }
+
+     .registered-workouts {
+         list-style: none;
+         padding: 0;
+     }
+
+     .registered-workouts li {
+         margin-bottom: 10px;
+         padding: 10px;
+         border: 1px solid #ddd;
+         border-radius: 8px;
+         background-color: #f9f9f9;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+     }
+
+     .registered-workouts li button {
+         background-color: #dc3545;
+         color: #fff;
+         padding: 8px 12px;
+         border: none;
+         border-radius: 8px;
+         cursor: pointer;
+         font-size: 14px;
+         transition: background-color 0.3s ease;
+     }
+
+     .registered-workouts li button:hover {
+         background-color: #b02a37;
+     }
+
+     /* для фильтров */
+
+     .filters {
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+         padding: 15px;
+         background-color: #f0f0f0;
+     }
+
+     input,
+     select {
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 6px;
+         font-size: 16px;
+     }

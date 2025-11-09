@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание тренировок для тренера</title>
+    <style>
+        body {
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: #f4f4f4;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+       }
+h1 {
+           text-align: center;
+           font-size: 24px;
+           color: #333;
+           margin: 0 0 20px;
+       }
+       .container {
+           width: 100%;
+           max-width: 400px;
+           margin: 20px 0;
+           background: white;
+           border-radius: 12px;
+           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+           padding: 20px;
+       }
+       .user-info {
+           text-align: center;
+           margin-bottom: 20px;
+       }
+       .tab-container {
+           display: flex;
+           border-bottom: 1px solid #ccc;
+       }
+       .tab-button {
+           padding: 10px 15px;
+           cursor: pointer;
+           background-color: #f0f0f0;
+           border: none;
+           border-bottom: 2px solid transparent;
+           margin-bottom: -1px;
+       }
+       .tab-button.active {
+           background-color: #fff;
+           border-bottom-color: #1d7824;
+       }
+       .tab-content {
+           display: none;
+           padding: 10px;
+       }
+       .tab-content.active {
+           display: block;
+       }
+       .workout {
+           margin-bottom: 20px;
+           padding: 10px;
+           border: 1px solid #ddd;
+           border-radius: 4px;
+           background-color: #f9f9f9;
+       }
+       .students {
+           display: none;
+       }
+       .save-button {
+         background-color: #1d7824;
+           color: white;
+           padding: 10px 15px;
+            border: none;
+           border-radius: 4px;
+           cursor: pointer;
+           display: block;
+           margin-top: 10px;
+       }
+       .save-button:disabled {
+         background-color: #ccc;
+           cursor: not-allowed;
+       }
+       .attendance-table {
+           width: 100%;
+           border-collapse: collapse;
+           margin-top: 20px;
+       }
+       .attendance-table th, .attendance-table td {
+           border: 1px solid #ddd;
+           padding: 8px;
+           text-align: left;
+       }
+       .attendance-table th {
+           background-color: #f0f0f0;
+       }
+    </style>
+</head>
+<body class="d-flex flex-column h-100">
+<div th:replace="fragments/navbar">Navbar</div>
+<main class="flex-shrink-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5">
+                <h1>Добавление тренировки</h1>
+                <form th:action="@{/lessons/add}"
+                      th:method="post"
+                      th:object="${lessonModel}"
+                      class="m-md-auto w-50 pb-3">
+                    <div class="mb-3">
+                        <label class="form-label" for="lessonName">Название тренировки</label>
+                        <input th:field="*{lessonName}"
+                               th:errorclass="is-invalid"
+                               type="text" class="form-control text-center" id="lessonName" aria-describedby="lessonName"
+                               name="lessonName"/>
+                        <small th:if="${#fields.hasErrors('lessonName')}" th:errors="*{lessonName}" class="text-danger">Error message</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="lessonDate">Дата тренировки</label>
+                        <input th:field="*{lessonDate}"
+                               th:errorclass="is-invalid"
+                               type="date" class="form-control text-center" id="lessonDate" aria-describedby="lessonDate"
+                               name="lessonDate"/>
+                        <small th:if="${#fields.hasErrors('lessonDate')}" th:errors="*{lessonDate}" class="text-danger">Error message</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="lessonTime">Время тренировки</label>
+                        <input th:field="*{lessonTime}"
+                               th:errorclass="is-invalid"
+                               type="time" class="form-control text-center" id="lessonTime" aria-describedby="lessonTime"
+                               name="revenue"/>
+                        <small th:if="${#fields.hasErrors('lessonTime')}" th:errors="*{lessonTime}" class="text-danger">Error message</small>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Добавить тренировку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+</body>

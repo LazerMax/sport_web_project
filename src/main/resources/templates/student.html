@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание тренировок</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/student.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            Расписание тренировок
+            <div class="buttons">
+                <a href="/profile"><i class="fas fa-user"></i></a>
+                <a th:href="@{/logout}"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="register">Расписание</div>
+            <div class="tab" data-tab="view">Мои записи</div>
+        </div>
+
+        <!-- Форма фильтрации -->
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Поиск по названию..." oninput="filterWorkouts()">
+      <input type="date" id="dateFilter" oninput="filterWorkouts()">
+      <select id="nameSelect" onchange="filterWorkouts()"></select>
+      <button onclick="sortWorkouts()">Сортировать по дате ▼</button>
+    </div>
+    
+        <div class="tab-content active" id="register-tab">
+            <div id="workoutsContainer">
+               <!-- Здесь будут добавляться workout -->
+            </div>
+        </div>
+
+        <div class="tab-content" id="view-tab" style="display: none;">
+            <ul class="registered-workouts" id="registeredWorkouts"></ul>
+        </div>
+    </div>
+    <script src="/js/student.js"></script>
+</body>
+
+</html>

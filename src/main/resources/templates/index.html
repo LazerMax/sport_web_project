@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дворец спорта</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+        
+        header h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        
+        main {
+            width: 90%;
+            max-width: 500px;
+            margin-top: 120px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .profile-buttons button {
+            flex-grow: 1;
+            padding: 12px;
+            background-color: #1d7824;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .profile-buttons button:last-child {
+            margin-right: 0;
+        }
+        
+        .profile-buttons button:hover {
+            background-color: #1d7824;
+        }
+        
+        .palace-image {
+            margin: 20px auto;
+            display: block;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        
+        .info-section {
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Дом физкультуры</h1>
+</header>
+
+<main>
+    <img src="C:\Users\adm-GataullinaLI\Downloads\project\project\src\main\resources\1.jfif" alt="Дворец спорта" class="palace-image">
+    
+    <div class="info-section">
+        <h2>Основные сведения</h2>
+<p>Адрес: 127055, г. Москва, ул Новосущёвская, д. 24, стр. 1</p>
+<p>Телефоны: +7(495) 274-02-74 доб. 3795, 3187</p>
+<p>Email: sport@miit.ru</p>
+<p>Время работы:Будни 07:00 – 23:00,Выходные дни 10:00 – 21:00.</p>
+<p>                  </p>
+<p>Дом физкультуры - это основная учебно-спортивная база университета, которая включает в себя 8 специализированных спортивных залов, многофункциональный спортивный зал и плавательный бассейн.</p>
+    </div>
+</main>
+</body>
+</html>

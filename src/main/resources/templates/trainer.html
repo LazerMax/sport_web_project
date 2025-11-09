@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание тренировок для тренера</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/trainer.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            Расписание тренировок
+            <div class="buttons">
+                <a href="/profile"><i class="fas fa-user"></i></a>
+                <a th:href="@{/logout}"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="tab-container">
+            <button class="tab-button active" data-tab="schedule">Расписание</button>
+            <button class="tab-button" data-tab="attendance">Посещаемость</button>
+        </div>
+
+        <div id="workouts-container">
+            <!-- Здесь будут добавляться workout -->
+        </div>
+        <button class="button-style" id="add-workout-button">Добавить тренировку</button>
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <label class="modal-label">Введите название тренировки:</label>
+            <input type="text" id="name" name="name">
+            <label class="modal-label" for="date">Выберите дату:</label>
+            <input type="date" id="date" name="date">
+            <label class="modal-label" for="time">Выберите время:</label>
+            <input type="time" id="time" name="time">
+
+            <!-- Список для выбора с радиокнопками -->
+            <label class="modal-label">Выберите место тренировки:</label>
+            <div class="radio-group" id="workout-place-group">
+                <label>
+                    <input type="radio" name="place" value="Зал 1" checked>
+                    Зал 1
+                </label>
+                <label>
+                    <input type="radio" name="place" value="Зал 2">
+                    Зал 2
+                </label>
+                <label>
+                    <input type="radio" name="place" value="Бассеин">
+                    Бассеин
+                </label>
+                <label>
+                    <input type="radio" name="place" value="Большой зал">
+                    Большой зал
+                </label>
+            </div>
+
+            <button class="button-style modal-label" id="confirm-add-workout-button">Подтвердить</button>
+        </div>
+    </div>
+
+    <div class="tab-content" id="attendance">
+        <h1>Посещаемость</h1>
+        <table class="attendance-table" id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Посещаемость, %</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script src="/js/trainer.js"></script>
+</body>
+
+</html>

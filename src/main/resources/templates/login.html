@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 350px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            padding-left: 40px; /* Отступ для иконок */
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            transition: box-shadow 0.2s ease;
+            font-size: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            box-shadow: 0 0 0 0.2rem rgba(39, 156, 49, 0.25);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-image: linear-gradient(to right, #1d7824, #279c31);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-image 0.2s ease;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        button:hover {
+            background-image: linear-gradient(to right,  #1d7824, #279c31);
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+            color:  #1d7824 ;
+        }
+    </style>
+    <script>
+        if (window.history && window.history.pushState) {
+            window.history.pushState(null, document.title, window.location.href);
+            window.addEventListener('popstate', function (event) {
+                window.history.pushState(null, document.title, window.location.href);
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Вход</h1>
+    <form th:action="@{/login}" method="post" th:object="${userModel}">
+        <!-- Поле логина -->
+        <div class="form-group">
+            <i class="fas fa-user"></i>
+            <input type="text" name="username" placeholder="Имя пользователя" required>
+        </div>
+
+        <!-- Поле пароля -->
+        <div class="form-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" placeholder="Пароль" required>
+        </div>
+
+        <!-- Кнопка входа -->
+        <button type="submit">Войти</button>
+
+        <!-- Ссылка на регистрацию -->
+        <a th:href="@{/register}">Регистрация</a>
+    </form>
+</div>
+</body>
+</html>

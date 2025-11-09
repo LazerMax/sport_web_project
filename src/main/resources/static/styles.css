@@ -1,0 +1,90 @@
+body {
+    font-family: 'Times New Roman', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #e8f1f7;
+    color: #333;
+    text-align: center;
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    display: flex; /* Для flexbox-расположения */
+    flex-direction: column; /* Элементы сверху вниз */
+}
+
+header { /* Новый блок для заголовка */
+    background-color: #1d7824;
+    color: white;
+    padding: 1rem 0;
+    text-align: center; /* Заголовок по центру */
+}
+
+header h1 {
+    margin: 0; /* Убираем отступы заголовка */
+}
+
+main { /* Новый блок для основного контента */
+    flex: 1; /* Занимает оставшееся пространство */
+    padding: 2rem; /* Отступы от краев */
+}
+
+.main-section { /* Класс для разделов (Доктора, Пациенты, и т.д.) */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Разделение по горизонтали */
+    margin-bottom: 2rem; /* Отступ снизу */
+}
+
+.main-section a {
+    display: block; /* Каждый элемент станет блочным */
+    width: 200px; /* Ширина каждого элемента */
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 1rem; /* Отступ между элементами */
+    font-size: 1.2em; /* Увеличиваем размер шрифта */
+}
+
+footer {
+    text-align: center;
+    font-size: 10px; /* Устанавливаем размер шрифта */
+}
+
+
+
+/* Стилизация таблиц */
+table {
+    width: 100%; /* Таблица занимает всю ширину */
+    margin: 2rem 0; /* Отступы сверху и снизу */
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #ddd; /* Тонкая серая граница */
+}
+
+th {
+    background-color: #f0f0f0; /* Светло-серый фон для заголовков столбцов */
+    font-weight: bold;
+}
+
+/* Чередующиеся цвета строк таблицы */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e0e8f1; /* Эффект при наведении на строку */
+}
+
+/* Отзывчивость */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+}
